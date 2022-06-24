@@ -1,0 +1,37 @@
+﻿
+
+input, select {
+    width: 100%;
+}
+
+#table_reports {
+    width:100%;
+}
+
+#td_report {
+    width:85%;
+}
+
+#td_controls {
+    text-align:left;
+    vertical-align:top;
+    width: 15%;
+    padding-left:10px;
+    padding-top:30px;
+}
+
+#div_report {
+    text-align:center;
+    width: 80%;
+    margin: 30px;
+}
+
+#filterBoxOne {
+    width: 100px;
+}
+
+.button {
+    background-color:#0071c5;
+    color:#fff;
+    width:100px;
+}

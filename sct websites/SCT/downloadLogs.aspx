@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" ContentType="text/csv" AutoEventWireup="true" Inherits="SCT.downloadLogs" %>

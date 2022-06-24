@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SCT.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SCT_dsBroker_DSBroker" Type="(Web Service URL)" Scope="Application">
+      <!--<Value Profile="(Default)">http://fmspwbsmt004.amr.corp.intel.com/DSBrokerWS/DSBroker.asmx</Value>-->
+	<Value Profile="(Default)">http://dsbrokerws.intel.com/DSBroker.asmx</Value>
+    </Setting>
+    <Setting Name="SCT_cmmw_CMMWWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/CMMW/CMMWWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

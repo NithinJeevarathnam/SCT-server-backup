@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<site-coverage>
+  <site name="AZ-ARIZONA">
+    <domain-controller domain="AMR">azsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">azsamr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">azsamr503.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">azsamr604.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">azsamr605.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">azsccr401.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">azscorp401.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">azsgar401.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">azsger401.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="OR-OREGON">
+    <domain-controller domain="AMR">orsamr401.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr503.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr509.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr603.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr604.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr605.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr606.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr607.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">orsamr608.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">orsccr502.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">orsccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">orscorp401.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">orsgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">orsgar602.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">orsger501.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">orsger602.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="NM-NEWMEXICO">
+    <domain-controller domain="AMR">rrsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">rrsamr502.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="HD-HUDSON">
+    <domain-controller domain="AMR">hdsamr401.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">hdsamr402.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="IR-IRELAND">
+    <domain-controller domain="AMR">irsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">irsamr601.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">irsccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">irscorp601.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">irsgar401.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">irsgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">irsger503.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">irsger601.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">irsger602.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">irsger603.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="KM-KULIM">
+    <domain-controller domain="GAR">kmsgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">s33samr503.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="PG-PENANG">
+    <domain-controller domain="AMR">pgsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">pgsamr601.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">pgsamr602.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">pgsccr501.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">pgsccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">pgsccr602.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">pgscorp401.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">pgscorp601.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar501.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar502.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar504.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar603.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar604.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">pgsger501.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">pgsger601.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="CR-COSTARICA">
+    <domain-controller domain="AMR">crsamr401.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">crsamr402.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="BG-BANGALORE">
+    <domain-controller domain="AMR">bgsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">bgsamr602.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">bgsccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">bgsccr602.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">bgscorp601.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">bgscorp602.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">bgsgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">bgsgar602.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">bgsger601.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">bgsger602.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="AN-AUSTIN">
+    <domain-controller domain="AMR">ansamr401.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="IK-KOREA">
+    <domain-controller domain="GAR">iksgar401.gar.corp.intel.com</domain-controller>
+  </site>
+  <site name="IGK-GDANSK">
+    <domain-controller domain="GER">gksger601.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="HA-HAIFA">
+    <domain-controller domain="AMR">hasamr601.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">hasccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">hascorp601.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">hasgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">hasger501.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">hasger602.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">hasger603.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">hasger604.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="LC-LACHISH">
+    <domain-controller domain="GER">lcsger401.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">lcsger601.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="JR-JERUSALEM">
+    <domain-controller domain="GER">jrsger401.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="GM-GUADALAJARA">
+    <domain-controller domain="AMR">gmsamr401.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="CD-CHENGDU">
+    <domain-controller domain="CCR">cdsccr401.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">cdsccr601.ccr.corp.intel.com</domain-controller>
+  </site>
+  <site name="SHZ-ZIZHU">
+    <domain-controller domain="CCR">shsccr501.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">shsccr602.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">shsccr603.ccr.corp.intel.com</domain-controller>
+  </site>
+  <site name="CA-CALIFORNIA">
+    <domain-controller domain="AMR">casamr601.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">casccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">cascorp601.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">casgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">casger601.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr504.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr602.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr603.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr604.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr605.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr606.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr608.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">fmsamr609.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">scsamr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">scsamr503.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">scsamr505.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">scsamr604.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">scsccr501.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">scsgar501.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">scsger501.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="AZ-CDC">
+    <domain-controller domain="AMR">cdcsamr601.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">cdcsamr602.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">cdcscorp502.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">cdcscorp601.corp.intel.com</domain-controller>
+  </site>
+  <site name="HO-HOCHIMINH">
+    <domain-controller domain="CCR">hosccr401.ccr.corp.intel.com</domain-controller>
+  </site>
+  <site name="DL-DALIAN">
+    <domain-controller domain="CCR">dlsccr401.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">dlsccr601.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">dlsccr602.ccr.corp.intel.com</domain-controller>
+  </site>
+  <site name="DEFAULT-STAGING-SEA">
+    <domain-controller domain="CCR">atcdsccr602.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">aticsgar601.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">bgsgar603.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">pgsamr503.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">pgsccr502.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">pgsgar602.gar.corp.intel.com</domain-controller>
+  </site>
+  <site name="AW-ALLENTOWN">
+    <domain-controller domain="AMR">awsamr401.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">awsamr601.amr.corp.intel.com</domain-controller>
+  </site>
+  <site name="MU-CAMPEON">
+    <domain-controller domain="GER">musger501.ger.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">musger502.ger.corp.intel.com</domain-controller>
+  </site>
+  <site name="SG-HAWPAR">
+    <domain-controller domain="GAR">sgsgar601.gar.corp.intel.com</domain-controller>
+  </site>
+  <site name="CD-S46">
+    <domain-controller domain="AMR">s46samr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">s46samr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">s46sccr401.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">s46sccr402.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">s46scorp401.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">s46scorp502.corp.intel.com</domain-controller>
+  </site>
+  <site name="KM-S33">
+    <domain-controller domain="AMR">s33samr501.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="AMR">s33samr502.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">s33scorp501.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">s33scorp602.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">s33sgar501.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">s33sgar502.gar.corp.intel.com</domain-controller>
+  </site>
+  <site name="AZ-BU">
+    <domain-controller domain="AMR">azvsamr650.amr.corp.intel.com</domain-controller>
+    <domain-controller domain="CCR">azvsccr650.ccr.corp.intel.com</domain-controller>
+    <domain-controller domain="CORP">azvscorp650.corp.intel.com</domain-controller>
+    <domain-controller domain="GAR">azvsgar650.gar.corp.intel.com</domain-controller>
+    <domain-controller domain="GER">azvsger650.ger.corp.intel.com</domain-controller>
+  </site>
+</site-coverage>

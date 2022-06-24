@@ -1,0 +1,85 @@
+/*** Animations ***/
+/* --------------------------
+ * FALLBACK IE8 - Compatibility Support
+ * --------------------------
+*/
+/*** BUTTON ***/
+button,
+.intel-btn {
+  behavior: url("js/libs/PIE.htc"); }
+
+/*** CHECKBOX & RADIO BUTTON ***/
+.intel-checkbox input[type="checkbox"],
+.intel-radio input[type="radio"] {
+  display: inline-block;
+  height: 1.25em;
+  width: 1.25em;
+  padding: 0; }
+
+.intel-checkbox label,
+.intel-radio label {
+  display: inline;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+.intel-checkbox label:before,
+.intel-radio label:before,
+.intel-checkbox label:after,
+.intel-radio label:after {
+  display: none;
+  position: relative; }
+
+.intel-radio input[type="radio"]:checked + label:after {
+  color: transparent;
+  background-color: transparent;
+  display: block;
+  position: relative;
+  content: '\A';
+  white-space: pre; }
+
+.intel-radio label:after {
+  display: block;
+  position: relative;
+  content: '\A';
+  white-space: pre; }
+
+/*** DROPDOWN ***/
+.intel-select {
+  border: none; }
+
+.intel-select:after {
+  display: none; }
+
+.intel-select select, select {
+  border: 1px solid #D3D8DB;
+  height: 2.25em;
+  padding: 0; }
+
+.intel-select:before {
+  border-left: none; }
+
+/*** PROGRESS BAR ***/
+.intel-progress-bar li span {
+  behavior: url("js/libs/PIE.htc"); }
+
+/*** SWITCH ***/
+.intel-switch input[type=checkbox] {
+  display: inline-block; }
+
+.intel-switch label {
+  display: none; }
+
+/*** TAB ***/
+/* Does not support Nubbin and rounded corners */
+/* Nubbin */
+.intel-tab a.active:after,
+.intel-tab a.active:before {
+  border-width: 0; }
+
+@media (max-width: 480px) {
+  .intel-tab ul li:first-child,
+  .intel-tab ul li:first-child + li,
+  .intel-tab ul li:first-child + li + li {
+    display: block; } }

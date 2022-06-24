@@ -1,0 +1,174 @@
+﻿h3 {
+    color:#0071c5;
+    width:100%;
+    border-bottom:1px #000 solid;
+}
+
+#incidentNotification{
+    vertical-align:bottom;
+    color:red;
+    float:none;
+}
+
+#div_wwid {
+    background-color:Gray;
+    min-width:350px;
+    min-height:20px;
+    margin: 2px 0 0 20px;
+    vertical-align:top;
+    float:left;
+    z-index:1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 0 6px 0 #333;
+    -webkit-box-shadow: 0 0 6px 0 #333;
+    box-shadow: 0 0 6px 0 #333;
+    opacity: 0.85;
+    background-image: -ms-linear-gradient(top left, #aeacad 0%, #efedee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#aeacad', endColorstr='#efedee');
+    background: -moz-linear-gradient(top,  #aeacad,  #efedee);
+    background-image: -webkit-gradient(
+        linear,
+	    left bottom,
+	    left top,
+	    color-stop(1, #aeacad),
+	    color-stop(0.28,#efedee)
+	);/* IE6 & IE7 */
+	/* IE8 */
+}
+
+#div_wwid table {
+    width:100%;
+     height:100%;
+     border:none;
+     margin:0 10px 0 10px;
+}
+
+#div_wwid table td {
+    vertical-align:middle;
+    padding: 5px 5px 5px 5px;
+}
+
+#tabs {
+    width:63%;
+    float:right;
+    position:relative;
+    min-height:500px;
+    margin: 0 20px 0 20px;
+    z-index:2;
+}
+
+
+#tabs div table {
+    margin:20px 20px 20px 20px;
+}
+
+#tabs div table tr td {
+    padding:5px 5px 5px 5px;
+}
+
+#tabs input, #tabs select {
+    width:150px;
+}
+
+#tabs input.button {
+    background-color:#0071c5;
+    color:#fff;
+    width:100px;
+}
+
+#tabs input.button_disabled {
+    background-color:#999;
+    color:#fff;
+    width:100px;
+}
+
+#tabs input.checkbox {
+    width:15px;
+}
+
+#div_lyncAccordion {
+    min-height:500px;
+}
+
+#div_lyncOnly, #div_lyncCompanion {
+    min-height:500px;
+    height:80%;
+}
+
+#div_lyncAccordion h2 {
+    width:inherit;
+}
+
+#link_newBulkRequest, #link_killJobs {
+    color: #fff;
+    background-color:#0071c5;
+    border: 1px solid #666;
+    padding: 2px;
+}
+
+#div_report {
+    width: 600px;
+    height: 400px;
+}
+
+#next_available_container {
+    text-align:center;
+}
+
+#next_available {
+    font-size:24px;
+}
+
+#open_incident {
+    font-size:18px;
+    color:red;
+}
+
+#incidentNotification{
+    font-size:18px;
+    color:red;
+}
+#button_refresh {
+    text-align:center;
+}
+
+#div_lyncOnly, #div_lyncCompanion {
+    height:288px;
+    min-height:288px;
+}
+
+.topRow {
+    padding-top: 30px;
+    border-top:1px solid #000;
+    vertical-align:top;
+}
+
+.right {
+    text-align: right;
+}
+
+.top {
+    vertical-align: top;
+}
+
+a.logsLink {
+    color:#0071c5;
+}
+
+a.logsLink:hover {
+    color:#565656;
+}
+
+.red {
+    color: red;
+}
+
+/* to display at the time of validation */
+#textareaValidation{
+    color : dodgerblue;
+    font-weight:bold;
+
+}

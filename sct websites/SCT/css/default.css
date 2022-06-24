@@ -1,0 +1,125 @@
+﻿
+body {
+    background-color:#0071C5;
+}
+
+h1,h2, p {
+    color:#fff;
+    margin: 0 0 0 1px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+h2
+{
+    font-size: x-large;
+    margin-top: 50px;
+}
+
+p {
+    margin: 15px 0 15px 1px;
+}
+
+#div_maincontent {
+    /*padding: 20px 0 0 20px;*/
+    margin: 0 0 0 0;
+    width:100%;
+    min-height:900px;
+    
+    background-color:#0071C5;
+    background-image: -ms-linear-gradient(top left, #0070C5 0%, #004383 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#0070C5', endColorstr='#004383');
+    background: -moz-linear-gradient(top,  #0070C5,  #004383);
+    background-image: -webkit-gradient(
+        linear,
+	    left bottom,
+	    left top,
+	    color-stop(1, #0070C5),
+	    color-stop(0.28,#004383)
+	);
+}
+
+#div_background {
+    margin-top: 75px;
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height:650px;
+    text-align: right;
+    vertical-align: middle;
+    -moz-box-shadow: 0 0 18px 0 #333;
+    -webkit-box-shadow: 0 0 18px 0 #333;
+    box-shadow: 0 0 18px 0 #333;
+}
+
+#div_background table {
+    width: 100%;
+}
+
+#div_background table td{
+    width: 50%;
+    vertical-align: middle;
+    padding-right:100px;
+}
+
+#div_login {
+    background-color:Gray;
+    /*cucm cluster consolidation change BOC : Anoj*/
+    /*width:400px;*/
+    width: 400px;
+    /*height:200px;*/
+    height: 260px;
+    /*cucm cluster consolidation change EOC : Anoj*/
+    border: 1px solid #fff;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-box-shadow: 0 0 18px 0 #333;
+    -webkit-box-shadow: 0 0 18px 0 #333;
+    box-shadow: 0 0 18px 0 #333;
+    opacity: 0.90;
+    float: right;
+    margin-top: 100px;
+    background-image: -ms-linear-gradient(top left, #aeacad 0%, #efedee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#aeacad', endColorstr='#efedee');
+    background: -moz-linear-gradient(top,  #aeacad,  #efedee);
+    background-image: -webkit-gradient(
+        linear,
+	    left bottom,
+	    left top,
+	    color-stop(1, #aeacad),
+	    color-stop(0.28,#efedee)
+	);/* IE6 & IE7 */
+	/* IE8 */
+}
+
+#div_login table {
+    border: none;
+    margin: 20px 20px 20px 20px;
+    width: 200px;
+}
+
+#div_login table td.fieldCol {
+    vertical-align:middle;
+    height:34px;
+}
+
+#div_login input, #div_login select {
+}
+
+#input_loginuser.loading {
+    background-image: url("../images/loading.gif");
+    background-position: right;
+    background-repeat:no-repeat;
+}
+
+#p_login {
+    text-align: left;
+    color:#333;
+    margin-left: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,3380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dsbrokerws.intel.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dsbrokerws.intel.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dsbrokerws.intel.com/">
+      <s:element name="batchRequest">
+        <s:complexType />
+      </s:element>
+      <s:element name="batchResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateOU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ouDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAttr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="attr" type="tns:attr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="attr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="attrName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="attrValue" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateOUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateOUResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGpoToOU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ouDn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGpoToOUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddGpoToOUResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createPrimaryUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createPrimaryUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createPrimaryUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGenericUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGenericUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createGenericUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createComputerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createGroupResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyObjectAttr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfModifyAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfModifyAttr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="modifyAttr" type="tns:modifyAttr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="modifyAttr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="attrName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="attrValue" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="operation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="modifyObjectAttrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modifyObjectAttrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteObjectResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="safeDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deleteDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="safeDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="safeDeleteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="thawUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="thawUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="thawUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailboxEnable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxSite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailboxEnableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailboxEnableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailboxDisable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailboxDisableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailboxDisableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailEnableUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailEnableUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailEnableUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailDisableUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailDisableUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailDisableUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailEnableGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailEnableGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailEnableGroupResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailDisableGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailDisableGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mailDisableGroupResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="moveMBUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newMailboxSite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="moveMBUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="moveMBUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userMoveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="computerMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newContainerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="computerMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="computerMoveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="computerRename">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="computerRenameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="computerRenameResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newContainerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupMoveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userRename">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newIDSID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userRenameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userRenameResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userRename2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newIDSID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newGivenName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newInitials" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserPrincipalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userRename2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userRename2Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupRename">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupRenameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupRenameResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="personalityRename">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="personalityRenameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="personalityRenameResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupPersonalityRename">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="groupPersonalityRenameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupPersonalityRenameResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPEnable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPEnableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SIPEnableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPDisable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPDisableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SIPDisableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newSIPServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SIPMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SIPMoveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountEnable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountEnableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountEnableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountDisable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountDisableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountDisableResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountUnlock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountUnlockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountUnlockResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="passwordReset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="passwordResetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="passwordResetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="resetComputerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Exists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectClass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistsResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectDN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectClass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectDNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getObjectDNResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteCoverageList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteCoverageListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteCoverageListResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUnixUserPersonality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUnixUserPersonalityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createUnixUserPersonalityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyUnixUserPersonality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfModifyAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyUnixUserPersonalityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modifyUnixUserPersonalityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUnixGroupPersonality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUnixGroupPersonalityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createUnixGroupPersonalityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyUnixGroupPersonality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attributes" type="tns:ArrayOfModifyAttr" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyUnixGroupPersonalityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modifyUnixGroupPersonalityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUMMailboxPolicyNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUMMailboxPolicyNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUMMailboxPolicyNamesResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCurrentUMMailboxPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCurrentUMMailboxPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCurrentUMMailboxPolicyResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxEnableUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uMMailboxPolicyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxEnableUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMMailboxEnableUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxDisableUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxDisableUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMMailboxDisableUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxResetPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMMailboxResetPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMMailboxResetPINResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMSearchExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMSearchExtensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UMSearchExtensionResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMAddExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMAddExtensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMAddExtensionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMRemoveExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMRemoveExtensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMRemoveExtensionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMIsValidPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMIsValidPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UMIsValidPrefixResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMGetPoliciesByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMGetPoliciesByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UMGetPoliciesByPrefixResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMGetDialPlanByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMGetDialPlanByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UMGetDialPlanByPrefixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllActiveSyncPolicies">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllActiveSyncPoliciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllActiveSyncPoliciesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUMMailboxForLync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uMMailboxPolicyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferredServer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUMMailboxForLyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetUMMailboxForLyncResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncVoiceWithLineURI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str_LineURI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dialPlan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="voicePolicy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="umPolicy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncVoiceWithLineURIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncVoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dialPlan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="voicePolicy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="umPolicy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncVoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLyncCsUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLyncCsUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCsUserPoolInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCsUserPoolInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableLyncVoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableLyncVoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentLyncAndUMAttributes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentLyncAndUMAttributesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncDialPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dialPlan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncDialPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncTelephoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telephoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncTelephoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncVoicePolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="voicePolicy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncVoicePolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncUMPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uMPolicy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetLyncUMPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncSIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="intelRegistrarPool" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableLyncSIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableLyncSIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableLyncSIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyMailAttr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailAttr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyMailAttrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyMailAttrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyGidNumberAttr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gidNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyGidNumberAttrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyGidNumberAttrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyUIDNumberAttr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distinguishedName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="uidNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetSite" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyUIDNumberAttrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyUIDNumberAttrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="batchSoapIn">
+    <wsdl:part name="parameters" element="tns:batchRequest" />
+  </wsdl:message>
+  <wsdl:message name="batchSoapOut">
+    <wsdl:part name="parameters" element="tns:batchResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOUSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOU" />
+  </wsdl:message>
+  <wsdl:message name="CreateOUSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOUResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGpoToOUSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGpoToOU" />
+  </wsdl:message>
+  <wsdl:message name="AddGpoToOUSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGpoToOUResponse" />
+  </wsdl:message>
+  <wsdl:message name="createUserSoapIn">
+    <wsdl:part name="parameters" element="tns:createUser" />
+  </wsdl:message>
+  <wsdl:message name="createUserSoapOut">
+    <wsdl:part name="parameters" element="tns:createUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPrimaryUserSoapIn">
+    <wsdl:part name="parameters" element="tns:createPrimaryUser" />
+  </wsdl:message>
+  <wsdl:message name="createPrimaryUserSoapOut">
+    <wsdl:part name="parameters" element="tns:createPrimaryUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="createGenericUserSoapIn">
+    <wsdl:part name="parameters" element="tns:createGenericUser" />
+  </wsdl:message>
+  <wsdl:message name="createGenericUserSoapOut">
+    <wsdl:part name="parameters" element="tns:createGenericUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="createComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:createComputer" />
+  </wsdl:message>
+  <wsdl:message name="createComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:createComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="createGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:createGroup" />
+  </wsdl:message>
+  <wsdl:message name="createGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:createGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyObjectAttrSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyObjectAttr" />
+  </wsdl:message>
+  <wsdl:message name="modifyObjectAttrSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyObjectAttrResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteObject" />
+  </wsdl:message>
+  <wsdl:message name="deleteObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="safeDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:safeDelete" />
+  </wsdl:message>
+  <wsdl:message name="safeDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:safeDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="thawUserSoapIn">
+    <wsdl:part name="parameters" element="tns:thawUser" />
+  </wsdl:message>
+  <wsdl:message name="thawUserSoapOut">
+    <wsdl:part name="parameters" element="tns:thawUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailboxEnableSoapIn">
+    <wsdl:part name="parameters" element="tns:mailboxEnable" />
+  </wsdl:message>
+  <wsdl:message name="mailboxEnableSoapOut">
+    <wsdl:part name="parameters" element="tns:mailboxEnableResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailboxDisableSoapIn">
+    <wsdl:part name="parameters" element="tns:mailboxDisable" />
+  </wsdl:message>
+  <wsdl:message name="mailboxDisableSoapOut">
+    <wsdl:part name="parameters" element="tns:mailboxDisableResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailEnableUserSoapIn">
+    <wsdl:part name="parameters" element="tns:mailEnableUser" />
+  </wsdl:message>
+  <wsdl:message name="mailEnableUserSoapOut">
+    <wsdl:part name="parameters" element="tns:mailEnableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailDisableUserSoapIn">
+    <wsdl:part name="parameters" element="tns:mailDisableUser" />
+  </wsdl:message>
+  <wsdl:message name="mailDisableUserSoapOut">
+    <wsdl:part name="parameters" element="tns:mailDisableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailEnableGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:mailEnableGroup" />
+  </wsdl:message>
+  <wsdl:message name="mailEnableGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:mailEnableGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailDisableGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:mailDisableGroup" />
+  </wsdl:message>
+  <wsdl:message name="mailDisableGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:mailDisableGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="moveMBUserSoapIn">
+    <wsdl:part name="parameters" element="tns:moveMBUser" />
+  </wsdl:message>
+  <wsdl:message name="moveMBUserSoapOut">
+    <wsdl:part name="parameters" element="tns:moveMBUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="userMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:userMove" />
+  </wsdl:message>
+  <wsdl:message name="userMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:userMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="computerMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:computerMove" />
+  </wsdl:message>
+  <wsdl:message name="computerMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:computerMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="computerRenameSoapIn">
+    <wsdl:part name="parameters" element="tns:computerRename" />
+  </wsdl:message>
+  <wsdl:message name="computerRenameSoapOut">
+    <wsdl:part name="parameters" element="tns:computerRenameResponse" />
+  </wsdl:message>
+  <wsdl:message name="groupMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:groupMove" />
+  </wsdl:message>
+  <wsdl:message name="groupMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:groupMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="userRenameSoapIn">
+    <wsdl:part name="parameters" element="tns:userRename" />
+  </wsdl:message>
+  <wsdl:message name="userRenameSoapOut">
+    <wsdl:part name="parameters" element="tns:userRenameResponse" />
+  </wsdl:message>
+  <wsdl:message name="userRename2SoapIn">
+    <wsdl:part name="parameters" element="tns:userRename2" />
+  </wsdl:message>
+  <wsdl:message name="userRename2SoapOut">
+    <wsdl:part name="parameters" element="tns:userRename2Response" />
+  </wsdl:message>
+  <wsdl:message name="groupRenameSoapIn">
+    <wsdl:part name="parameters" element="tns:groupRename" />
+  </wsdl:message>
+  <wsdl:message name="groupRenameSoapOut">
+    <wsdl:part name="parameters" element="tns:groupRenameResponse" />
+  </wsdl:message>
+  <wsdl:message name="personalityRenameSoapIn">
+    <wsdl:part name="parameters" element="tns:personalityRename" />
+  </wsdl:message>
+  <wsdl:message name="personalityRenameSoapOut">
+    <wsdl:part name="parameters" element="tns:personalityRenameResponse" />
+  </wsdl:message>
+  <wsdl:message name="groupPersonalityRenameSoapIn">
+    <wsdl:part name="parameters" element="tns:groupPersonalityRename" />
+  </wsdl:message>
+  <wsdl:message name="groupPersonalityRenameSoapOut">
+    <wsdl:part name="parameters" element="tns:groupPersonalityRenameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SIPEnableSoapIn">
+    <wsdl:part name="parameters" element="tns:SIPEnable" />
+  </wsdl:message>
+  <wsdl:message name="SIPEnableSoapOut">
+    <wsdl:part name="parameters" element="tns:SIPEnableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SIPDisableSoapIn">
+    <wsdl:part name="parameters" element="tns:SIPDisable" />
+  </wsdl:message>
+  <wsdl:message name="SIPDisableSoapOut">
+    <wsdl:part name="parameters" element="tns:SIPDisableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SIPMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:SIPMove" />
+  </wsdl:message>
+  <wsdl:message name="SIPMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:SIPMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountEnableSoapIn">
+    <wsdl:part name="parameters" element="tns:accountEnable" />
+  </wsdl:message>
+  <wsdl:message name="accountEnableSoapOut">
+    <wsdl:part name="parameters" element="tns:accountEnableResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountDisableSoapIn">
+    <wsdl:part name="parameters" element="tns:accountDisable" />
+  </wsdl:message>
+  <wsdl:message name="accountDisableSoapOut">
+    <wsdl:part name="parameters" element="tns:accountDisableResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountUnlockSoapIn">
+    <wsdl:part name="parameters" element="tns:accountUnlock" />
+  </wsdl:message>
+  <wsdl:message name="accountUnlockSoapOut">
+    <wsdl:part name="parameters" element="tns:accountUnlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="passwordResetSoapIn">
+    <wsdl:part name="parameters" element="tns:passwordReset" />
+  </wsdl:message>
+  <wsdl:message name="passwordResetSoapOut">
+    <wsdl:part name="parameters" element="tns:passwordResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:resetComputer" />
+  </wsdl:message>
+  <wsdl:message name="resetComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:resetComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:Exists" />
+  </wsdl:message>
+  <wsdl:message name="ExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDNSoapIn">
+    <wsdl:part name="parameters" element="tns:getObjectDN" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDNSoapOut">
+    <wsdl:part name="parameters" element="tns:getObjectDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteCoverageListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteCoverageList" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteCoverageListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteCoverageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="createUnixUserPersonalitySoapIn">
+    <wsdl:part name="parameters" element="tns:createUnixUserPersonality" />
+  </wsdl:message>
+  <wsdl:message name="createUnixUserPersonalitySoapOut">
+    <wsdl:part name="parameters" element="tns:createUnixUserPersonalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyUnixUserPersonalitySoapIn">
+    <wsdl:part name="parameters" element="tns:modifyUnixUserPersonality" />
+  </wsdl:message>
+  <wsdl:message name="modifyUnixUserPersonalitySoapOut">
+    <wsdl:part name="parameters" element="tns:modifyUnixUserPersonalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="createUnixGroupPersonalitySoapIn">
+    <wsdl:part name="parameters" element="tns:createUnixGroupPersonality" />
+  </wsdl:message>
+  <wsdl:message name="createUnixGroupPersonalitySoapOut">
+    <wsdl:part name="parameters" element="tns:createUnixGroupPersonalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyUnixGroupPersonalitySoapIn">
+    <wsdl:part name="parameters" element="tns:modifyUnixGroupPersonality" />
+  </wsdl:message>
+  <wsdl:message name="modifyUnixGroupPersonalitySoapOut">
+    <wsdl:part name="parameters" element="tns:modifyUnixGroupPersonalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUMMailboxPolicyNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:getUMMailboxPolicyNames" />
+  </wsdl:message>
+  <wsdl:message name="getUMMailboxPolicyNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:getUMMailboxPolicyNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentUMMailboxPolicySoapIn">
+    <wsdl:part name="parameters" element="tns:getCurrentUMMailboxPolicy" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentUMMailboxPolicySoapOut">
+    <wsdl:part name="parameters" element="tns:getCurrentUMMailboxPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxEnableUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UMMailboxEnableUser" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxEnableUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UMMailboxEnableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxDisableUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UMMailboxDisableUser" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxDisableUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UMMailboxDisableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxResetPINSoapIn">
+    <wsdl:part name="parameters" element="tns:UMMailboxResetPIN" />
+  </wsdl:message>
+  <wsdl:message name="UMMailboxResetPINSoapOut">
+    <wsdl:part name="parameters" element="tns:UMMailboxResetPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMSearchExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:UMSearchExtension" />
+  </wsdl:message>
+  <wsdl:message name="UMSearchExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:UMSearchExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMAddExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:UMAddExtension" />
+  </wsdl:message>
+  <wsdl:message name="UMAddExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:UMAddExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMRemoveExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:UMRemoveExtension" />
+  </wsdl:message>
+  <wsdl:message name="UMRemoveExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:UMRemoveExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMIsValidPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:UMIsValidPrefix" />
+  </wsdl:message>
+  <wsdl:message name="UMIsValidPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:UMIsValidPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMGetPoliciesByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:UMGetPoliciesByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="UMGetPoliciesByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:UMGetPoliciesByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMGetDialPlanByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:UMGetDialPlanByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="UMGetDialPlanByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:UMGetDialPlanByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveSyncPoliciesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllActiveSyncPolicies" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveSyncPoliciesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllActiveSyncPoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUMMailboxForLyncSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUMMailboxForLync" />
+  </wsdl:message>
+  <wsdl:message name="SetUMMailboxForLyncSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUMMailboxForLyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncVoiceWithLineURISoapIn">
+    <wsdl:part name="parameters" element="tns:EnableLyncVoiceWithLineURI" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncVoiceWithLineURISoapOut">
+    <wsdl:part name="parameters" element="tns:EnableLyncVoiceWithLineURIResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncVoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableLyncVoice" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncVoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableLyncVoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLyncCsUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLyncCsUser" />
+  </wsdl:message>
+  <wsdl:message name="GetLyncCsUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLyncCsUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCsUserPoolInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCsUserPoolInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCsUserPoolInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCsUserPoolInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableLyncVoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableLyncVoice" />
+  </wsdl:message>
+  <wsdl:message name="DisableLyncVoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableLyncVoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentLyncAndUMAttributesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentLyncAndUMAttributes" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentLyncAndUMAttributesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentLyncAndUMAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncDialPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:SetLyncDialPlan" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncDialPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:SetLyncDialPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncTelephoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:SetLyncTelephoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncTelephoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:SetLyncTelephoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncVoicePolicySoapIn">
+    <wsdl:part name="parameters" element="tns:SetLyncVoicePolicy" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncVoicePolicySoapOut">
+    <wsdl:part name="parameters" element="tns:SetLyncVoicePolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncUMPolicySoapIn">
+    <wsdl:part name="parameters" element="tns:SetLyncUMPolicy" />
+  </wsdl:message>
+  <wsdl:message name="SetLyncUMPolicySoapOut">
+    <wsdl:part name="parameters" element="tns:SetLyncUMPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncSIPSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableLyncSIP" />
+  </wsdl:message>
+  <wsdl:message name="EnableLyncSIPSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableLyncSIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableLyncSIPSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableLyncSIP" />
+  </wsdl:message>
+  <wsdl:message name="DisableLyncSIPSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableLyncSIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyMailAttrSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyMailAttr" />
+  </wsdl:message>
+  <wsdl:message name="ModifyMailAttrSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyMailAttrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyGidNumberAttrSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyGidNumberAttr" />
+  </wsdl:message>
+  <wsdl:message name="ModifyGidNumberAttrSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyGidNumberAttrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyUIDNumberAttrSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyUIDNumberAttr" />
+  </wsdl:message>
+  <wsdl:message name="ModifyUIDNumberAttrSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyUIDNumberAttrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DSBrokerSoap">
+    <wsdl:operation name="IntelADProxy">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is the main method used to listen and response to client request.</wsdl:documentation>
+      <wsdl:input name="batch" message="tns:batchSoapIn" />
+      <wsdl:output name="batch" message="tns:batchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createOU">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is for creating Organizational unit in a specify path.</wsdl:documentation>
+      <wsdl:input name="CreateOU" message="tns:CreateOUSoapIn" />
+      <wsdl:output name="CreateOU" message="tns:CreateOUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGpoToOu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is for creating Organizational unit in a specify path.</wsdl:documentation>
+      <wsdl:input name="AddGpoToOU" message="tns:AddGpoToOUSoapIn" />
+      <wsdl:output name="AddGpoToOU" message="tns:AddGpoToOUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <wsdl:input message="tns:createUserSoapIn" />
+      <wsdl:output message="tns:createUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createPrimaryUser">
+      <wsdl:input message="tns:createPrimaryUserSoapIn" />
+      <wsdl:output message="tns:createPrimaryUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGenericUser">
+      <wsdl:input message="tns:createGenericUserSoapIn" />
+      <wsdl:output message="tns:createGenericUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createComputer">
+      <wsdl:input message="tns:createComputerSoapIn" />
+      <wsdl:output message="tns:createComputerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <wsdl:input message="tns:createGroupSoapIn" />
+      <wsdl:output message="tns:createGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyObjectAttr">
+      <wsdl:input message="tns:modifyObjectAttrSoapIn" />
+      <wsdl:output message="tns:modifyObjectAttrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteObject">
+      <wsdl:input message="tns:deleteObjectSoapIn" />
+      <wsdl:output message="tns:deleteObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="safeDelete">
+      <wsdl:input message="tns:safeDeleteSoapIn" />
+      <wsdl:output message="tns:safeDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="thawUser">
+      <wsdl:input message="tns:thawUserSoapIn" />
+      <wsdl:output message="tns:thawUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailboxEnable">
+      <wsdl:input message="tns:mailboxEnableSoapIn" />
+      <wsdl:output message="tns:mailboxEnableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailboxDisable">
+      <wsdl:input message="tns:mailboxDisableSoapIn" />
+      <wsdl:output message="tns:mailboxDisableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableUser">
+      <wsdl:input message="tns:mailEnableUserSoapIn" />
+      <wsdl:output message="tns:mailEnableUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableUser">
+      <wsdl:input message="tns:mailDisableUserSoapIn" />
+      <wsdl:output message="tns:mailDisableUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableGroup">
+      <wsdl:input message="tns:mailEnableGroupSoapIn" />
+      <wsdl:output message="tns:mailEnableGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableGroup">
+      <wsdl:input message="tns:mailDisableGroupSoapIn" />
+      <wsdl:output message="tns:mailDisableGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is a method to move a user account with mailbox attached.</wsdl:documentation>
+      <wsdl:input name="moveMBUser" message="tns:moveMBUserSoapIn" />
+      <wsdl:output name="moveMBUser" message="tns:moveMBUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is a method to move a regular user account without mailbox attached.</wsdl:documentation>
+      <wsdl:input message="tns:userMoveSoapIn" />
+      <wsdl:output message="tns:userMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="computerMove">
+      <wsdl:input message="tns:computerMoveSoapIn" />
+      <wsdl:output message="tns:computerMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="computerRename">
+      <wsdl:input message="tns:computerRenameSoapIn" />
+      <wsdl:output message="tns:computerRenameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="groupMove">
+      <wsdl:input message="tns:groupMoveSoapIn" />
+      <wsdl:output message="tns:groupMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userRename">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deprecated: This is a method to rename a user account and its IDSID. Use the userRename2 method to correctly rename a user. The userRename method has errors that could throw exceptions and leave the user object in an odd state.</wsdl:documentation>
+      <wsdl:input message="tns:userRenameSoapIn" />
+      <wsdl:output message="tns:userRenameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userRename2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is a method to rename a user account and its IDSID. The user object 'sn', 'givenName', 'initials', and 'userPrincipalName' attributes must be specified.</wsdl:documentation>
+      <wsdl:input message="tns:userRename2SoapIn" />
+      <wsdl:output message="tns:userRename2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="groupRename">
+      <wsdl:input message="tns:groupRenameSoapIn" />
+      <wsdl:output message="tns:groupRenameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="personalityRename">
+      <wsdl:input message="tns:personalityRenameSoapIn" />
+      <wsdl:output message="tns:personalityRenameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="groupPersonalityRename">
+      <wsdl:input message="tns:groupPersonalityRenameSoapIn" />
+      <wsdl:output message="tns:groupPersonalityRenameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SIPEnable">
+      <wsdl:input message="tns:SIPEnableSoapIn" />
+      <wsdl:output message="tns:SIPEnableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SIPDisable">
+      <wsdl:input message="tns:SIPDisableSoapIn" />
+      <wsdl:output message="tns:SIPDisableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SIPMove">
+      <wsdl:input message="tns:SIPMoveSoapIn" />
+      <wsdl:output message="tns:SIPMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountEnable">
+      <wsdl:input message="tns:accountEnableSoapIn" />
+      <wsdl:output message="tns:accountEnableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountDisable">
+      <wsdl:input message="tns:accountDisableSoapIn" />
+      <wsdl:output message="tns:accountDisableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountUnlock">
+      <wsdl:input message="tns:accountUnlockSoapIn" />
+      <wsdl:output message="tns:accountUnlockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="passwordReset">
+      <wsdl:input message="tns:passwordResetSoapIn" />
+      <wsdl:output message="tns:passwordResetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetComputer">
+      <wsdl:input message="tns:resetComputerSoapIn" />
+      <wsdl:output message="tns:resetComputerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Exists">
+      <wsdl:input message="tns:ExistsSoapIn" />
+      <wsdl:output message="tns:ExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDN">
+      <wsdl:input message="tns:getObjectDNSoapIn" />
+      <wsdl:output message="tns:getObjectDNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCoverageList">
+      <wsdl:input message="tns:GetSiteCoverageListSoapIn" />
+      <wsdl:output message="tns:GetSiteCoverageListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createUnixUserPersonality">
+      <wsdl:input message="tns:createUnixUserPersonalitySoapIn" />
+      <wsdl:output message="tns:createUnixUserPersonalitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixUserPersonality">
+      <wsdl:input message="tns:modifyUnixUserPersonalitySoapIn" />
+      <wsdl:output message="tns:modifyUnixUserPersonalitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createUnixGroupPersonality">
+      <wsdl:input message="tns:createUnixGroupPersonalitySoapIn" />
+      <wsdl:output message="tns:createUnixGroupPersonalitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixGroupPersonality">
+      <wsdl:input message="tns:modifyUnixGroupPersonalitySoapIn" />
+      <wsdl:output message="tns:modifyUnixGroupPersonalitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUMMailboxPolicyNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of UM Mailbox Policy Names available for the specified user.</wsdl:documentation>
+      <wsdl:input message="tns:getUMMailboxPolicyNamesSoapIn" />
+      <wsdl:output message="tns:getUMMailboxPolicyNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentUMMailboxPolicy">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns current UM Mailbox Policy Name for specified user.  Returns null if  user is not enabled for UM Mailbox features.</wsdl:documentation>
+      <wsdl:input message="tns:getCurrentUMMailboxPolicySoapIn" />
+      <wsdl:output message="tns:getCurrentUMMailboxPolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxEnableUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enable UM Mailbox features for specified user, using provided UM Policy Name</wsdl:documentation>
+      <wsdl:input message="tns:UMMailboxEnableUserSoapIn" />
+      <wsdl:output message="tns:UMMailboxEnableUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxDisableUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Disable UM Mailbox features for specified user.</wsdl:documentation>
+      <wsdl:input message="tns:UMMailboxDisableUserSoapIn" />
+      <wsdl:output message="tns:UMMailboxDisableUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxResetPIN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reset UM Mailbox PIN for specified user.</wsdl:documentation>
+      <wsdl:input message="tns:UMMailboxResetPINSoapIn" />
+      <wsdl:output message="tns:UMMailboxResetPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMSearchExtension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for the owner of the specified UM extension.</wsdl:documentation>
+      <wsdl:input message="tns:UMSearchExtensionSoapIn" />
+      <wsdl:output message="tns:UMSearchExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMAddExtension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add UM Extension for specified user.</wsdl:documentation>
+      <wsdl:input message="tns:UMAddExtensionSoapIn" />
+      <wsdl:output message="tns:UMAddExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMRemoveExtension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove UM Extension for specified user.</wsdl:documentation>
+      <wsdl:input message="tns:UMRemoveExtensionSoapIn" />
+      <wsdl:output message="tns:UMRemoveExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMIsValidPrefix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Determine if the three digit extension prefix is valid as defined by the INET Dialplan XML file.</wsdl:documentation>
+      <wsdl:input message="tns:UMIsValidPrefixSoapIn" />
+      <wsdl:output message="tns:UMIsValidPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMGetPoliciesByPrefix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return the valid UM policies given the three digit extension prefix.</wsdl:documentation>
+      <wsdl:input message="tns:UMGetPoliciesByPrefixSoapIn" />
+      <wsdl:output message="tns:UMGetPoliciesByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMGetDialPlanByPrefix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return the UM dialplan that corresponds to the specified three digit extension prefix.</wsdl:documentation>
+      <wsdl:input message="tns:UMGetDialPlanByPrefixSoapIn" />
+      <wsdl:output message="tns:UMGetDialPlanByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveSyncPolicies">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all currently available ActiveSync mailbox policies.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllActiveSyncPoliciesSoapIn" />
+      <wsdl:output message="tns:GetAllActiveSyncPoliciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUMMailboxForLync">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enable UM Mailbox Extension and UM Policy.</wsdl:documentation>
+      <wsdl:input message="tns:SetUMMailboxForLyncSoapIn" />
+      <wsdl:output message="tns:SetUMMailboxForLyncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoiceWithLineURI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Voice Enable</wsdl:documentation>
+      <wsdl:input message="tns:EnableLyncVoiceWithLineURISoapIn" />
+      <wsdl:output message="tns:EnableLyncVoiceWithLineURISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Voice Enable</wsdl:documentation>
+      <wsdl:input message="tns:EnableLyncVoiceSoapIn" />
+      <wsdl:output message="tns:EnableLyncVoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLyncCsUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Get-CsUser</wsdl:documentation>
+      <wsdl:input message="tns:GetLyncCsUserSoapIn" />
+      <wsdl:output message="tns:GetLyncCsUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCsUserPoolInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Get-CsUserPoolInfo</wsdl:documentation>
+      <wsdl:input message="tns:GetCsUserPoolInfoSoapIn" />
+      <wsdl:output message="tns:GetCsUserPoolInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncVoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Voice Disable</wsdl:documentation>
+      <wsdl:input message="tns:DisableLyncVoiceSoapIn" />
+      <wsdl:output message="tns:DisableLyncVoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentLyncAndUMAttributes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Get Current Lync Attributes</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentLyncAndUMAttributesSoapIn" />
+      <wsdl:output message="tns:GetCurrentLyncAndUMAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncDialPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Set Dial Plan</wsdl:documentation>
+      <wsdl:input message="tns:SetLyncDialPlanSoapIn" />
+      <wsdl:output message="tns:SetLyncDialPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncTelephoneNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Set Telephone Number</wsdl:documentation>
+      <wsdl:input message="tns:SetLyncTelephoneNumberSoapIn" />
+      <wsdl:output message="tns:SetLyncTelephoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncVoicePolicy">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Set Voice Policy</wsdl:documentation>
+      <wsdl:input message="tns:SetLyncVoicePolicySoapIn" />
+      <wsdl:output message="tns:SetLyncVoicePolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncUMPolicy">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync Set UM Policy</wsdl:documentation>
+      <wsdl:input message="tns:SetLyncUMPolicySoapIn" />
+      <wsdl:output message="tns:SetLyncUMPolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncSIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync SIP Enable</wsdl:documentation>
+      <wsdl:input message="tns:EnableLyncSIPSoapIn" />
+      <wsdl:output message="tns:EnableLyncSIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncSIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lync SIP Disable</wsdl:documentation>
+      <wsdl:input message="tns:DisableLyncSIPSoapIn" />
+      <wsdl:output message="tns:DisableLyncSIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyMailAttr">
+      <wsdl:input message="tns:ModifyMailAttrSoapIn" />
+      <wsdl:output message="tns:ModifyMailAttrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGidNumberAttr">
+      <wsdl:input message="tns:ModifyGidNumberAttrSoapIn" />
+      <wsdl:output message="tns:ModifyGidNumberAttrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUIDNumberAttr">
+      <wsdl:input message="tns:ModifyUIDNumberAttrSoapIn" />
+      <wsdl:output message="tns:ModifyUIDNumberAttrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DSBrokerSoap" type="tns:DSBrokerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IntelADProxy">
+      <soap:operation soapAction="#batchRequest" style="document" />
+      <wsdl:input name="batch">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="batch">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOU">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/CreateOU" style="document" />
+      <wsdl:input name="CreateOU">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateOU">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGpoToOu">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/AddGpoToOU" style="document" />
+      <wsdl:input name="AddGpoToOU">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddGpoToOU">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPrimaryUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createPrimaryUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGenericUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createGenericUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createComputer">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyObjectAttr">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/modifyObjectAttr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteObject">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/deleteObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="safeDelete">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/safeDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="thawUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/thawUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailboxEnable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailboxEnable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailboxDisable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailboxDisable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailEnableUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailDisableUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableGroup">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailEnableGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableGroup">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/mailDisableGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/moveMBUser" style="document" />
+      <wsdl:input name="moveMBUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="moveMBUser">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/userMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="computerMove">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/computerMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="computerRename">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/computerRename" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupMove">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/groupMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRename">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/userRename" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRename2">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/userRename2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupRename">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/groupRename" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="personalityRename">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/personalityRename" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupPersonalityRename">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/groupPersonalityRename" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPEnable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SIPEnable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPDisable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SIPDisable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPMove">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SIPMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountEnable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/accountEnable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountDisable">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/accountDisable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountUnlock">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/accountUnlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="passwordReset">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/passwordReset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetComputer">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/resetComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exists">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDN">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/getObjectDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCoverageList">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/GetSiteCoverageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUnixUserPersonality">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createUnixUserPersonality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixUserPersonality">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/modifyUnixUserPersonality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUnixGroupPersonality">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/createUnixGroupPersonality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixGroupPersonality">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/modifyUnixGroupPersonality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUMMailboxPolicyNames">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/getUMMailboxPolicyNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentUMMailboxPolicy">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/getCurrentUMMailboxPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxEnableUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMMailboxEnableUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxDisableUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMMailboxDisableUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxResetPIN">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMMailboxResetPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMSearchExtension">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMSearchExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMAddExtension">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMAddExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMRemoveExtension">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMRemoveExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMIsValidPrefix">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMIsValidPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMGetPoliciesByPrefix">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMGetPoliciesByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMGetDialPlanByPrefix">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/UMGetDialPlanByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveSyncPolicies">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/GetAllActiveSyncPolicies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUMMailboxForLync">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SetUMMailboxForLync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoiceWithLineURI">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/EnableLyncVoiceWithLineURI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoice">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/EnableLyncVoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLyncCsUser">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/GetLyncCsUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCsUserPoolInfo">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/GetCsUserPoolInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncVoice">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/DisableLyncVoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentLyncAndUMAttributes">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/GetCurrentLyncAndUMAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncDialPlan">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SetLyncDialPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncTelephoneNumber">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SetLyncTelephoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncVoicePolicy">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SetLyncVoicePolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncUMPolicy">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/SetLyncUMPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncSIP">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/EnableLyncSIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncSIP">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/DisableLyncSIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyMailAttr">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/ModifyMailAttr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGidNumberAttr">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/ModifyGidNumberAttr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUIDNumberAttr">
+      <soap:operation soapAction="http://dsbrokerws.intel.com/ModifyUIDNumberAttr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DSBrokerSoap12" type="tns:DSBrokerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IntelADProxy">
+      <soap12:operation soapAction="#batchRequest" style="document" />
+      <wsdl:input name="batch">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="batch">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOU">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/CreateOU" style="document" />
+      <wsdl:input name="CreateOU">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateOU">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGpoToOu">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/AddGpoToOU" style="document" />
+      <wsdl:input name="AddGpoToOU">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddGpoToOU">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPrimaryUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createPrimaryUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGenericUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createGenericUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createComputer">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyObjectAttr">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/modifyObjectAttr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteObject">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/deleteObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="safeDelete">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/safeDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="thawUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/thawUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailboxEnable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailboxEnable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailboxDisable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailboxDisable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailEnableUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailDisableUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailEnableGroup">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailEnableGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailDisableGroup">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/mailDisableGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/moveMBUser" style="document" />
+      <wsdl:input name="moveMBUser">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="moveMBUser">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userMove">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/userMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="computerMove">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/computerMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="computerRename">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/computerRename" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupMove">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/groupMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRename">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/userRename" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRename2">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/userRename2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupRename">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/groupRename" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="personalityRename">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/personalityRename" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="groupPersonalityRename">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/groupPersonalityRename" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPEnable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SIPEnable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPDisable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SIPDisable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SIPMove">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SIPMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountEnable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/accountEnable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountDisable">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/accountDisable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountUnlock">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/accountUnlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="passwordReset">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/passwordReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetComputer">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/resetComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exists">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/Exists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDN">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/getObjectDN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCoverageList">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/GetSiteCoverageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUnixUserPersonality">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createUnixUserPersonality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixUserPersonality">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/modifyUnixUserPersonality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUnixGroupPersonality">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/createUnixGroupPersonality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUnixGroupPersonality">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/modifyUnixGroupPersonality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUMMailboxPolicyNames">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/getUMMailboxPolicyNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentUMMailboxPolicy">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/getCurrentUMMailboxPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxEnableUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMMailboxEnableUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxDisableUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMMailboxDisableUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMMailboxResetPIN">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMMailboxResetPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMSearchExtension">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMSearchExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMAddExtension">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMAddExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMRemoveExtension">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMRemoveExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMIsValidPrefix">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMIsValidPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMGetPoliciesByPrefix">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMGetPoliciesByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMGetDialPlanByPrefix">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/UMGetDialPlanByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveSyncPolicies">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/GetAllActiveSyncPolicies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUMMailboxForLync">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SetUMMailboxForLync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoiceWithLineURI">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/EnableLyncVoiceWithLineURI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncVoice">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/EnableLyncVoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLyncCsUser">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/GetLyncCsUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCsUserPoolInfo">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/GetCsUserPoolInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncVoice">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/DisableLyncVoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentLyncAndUMAttributes">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/GetCurrentLyncAndUMAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncDialPlan">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SetLyncDialPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncTelephoneNumber">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SetLyncTelephoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncVoicePolicy">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SetLyncVoicePolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLyncUMPolicy">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/SetLyncUMPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLyncSIP">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/EnableLyncSIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLyncSIP">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/DisableLyncSIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyMailAttr">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/ModifyMailAttr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGidNumberAttr">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/ModifyGidNumberAttr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUIDNumberAttr">
+      <soap12:operation soapAction="http://dsbrokerws.intel.com/ModifyUIDNumberAttr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DSBroker">
+    <wsdl:port name="DSBrokerSoap" binding="tns:DSBrokerSoap">
+      <soap:address location="http://dsbrokerws.intel.com/DSBroker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DSBrokerSoap12" binding="tns:DSBrokerSoap12">
+      <soap12:address location="http://dsbrokerws.intel.com/DSBroker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

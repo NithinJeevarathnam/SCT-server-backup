@@ -1,0 +1,43 @@
+﻿<meta http-equiv="Content Type" content="text/html; charset=ISO-8859-1" />
+@model LyncDiagnosticToolv1.Models.LyncModel
+
+@{
+    ViewBag.Title = "Lync Diagnostic";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchForm" })) { 
+    @Html.AntiForgeryToken()
+    @*Html.ValidationSummary(false)*@
+    <div class="jumbotron">
+        <h1>Skype for Business Diagnostic Tool</h1>
+        <p class="lead">
+            Enter account IDSID below and click Search. 
+        </p>
+        <p>
+            @Html.LabelFor(model => model.IDSID) 
+            @Html.EditorFor(model => model.IDSID) 
+            <button type="submit" class="btn btn-primary btn-large" id="search">SEARCH &raquo;</button>
+        </p>
+        <p>
+            @Html.ValidationMessageFor(model => model.IDSID, "", new { @class = "text-danger" })
+        </p>
+    </div>
+
+    <div id="divLoading">
+        <p>
+            Loading, please wait... <img src="~/Images/default.gif" />
+        </p>
+    </div>
+
+    <div class="lync" id="lyncview">
+        @Html.Action("Search", "Home", new { Model })
+    </div>
+
+
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        init();
+    });
+</script>

@@ -1,0 +1,80 @@
+﻿@*/**********************************************************************************************************************
+    * Project: Lync Diagnostic Tool                                               Intel® Copyright                       *
+    *                                                                           Created by: Marchena, Daniela            *
+    *                                                                           daniela.marchena.valladares@intel.com    *
+    *                                                                                                                    *
+    *                                                                                                                    *
+    *                                                                            Last Change: 01/13/2016                 *
+    * Description: Header layout of the app                                                                              *
+    **********************************************************************************************************************/*@
+<meta http-equiv="Content Type" content="text/html; charset=ISO-8859-1" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - SfB Diagnostic Tool</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/mlafv1")
+    @Styles.Render("~/Content/css")
+
+
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div>
+                    <a href=@Url.Action("Index", "Home")><img class="navbar-logo" src="~/Images/intel-logo-white-100.png" alt="Home"></a>
+                    <a class="navbar-brand" href=@Url.Action("Index", "Home")>Skype for Business Diagnostic Tool</a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-xs-6 col-md-2">
+                        <h3>About IT</h3>
+                        <ul>
+                            <li><a href="http://itstrategy.intel.com/about-it">IT Organization</a></li>
+                            <li><a href="http://www.intel.com/IT">IT@Intel (external)</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <h3>Related Sites</h3>
+                        <ul>
+                            <li><a href="https://employeecontent.intel.com/EntryPage/Default.aspx?nodeid=7650a48f-2a20-410b-910f-9395c7293aff">Corporate Services</a></li>
+                            <li><a href="https://employeecontent.intel.com/EntryPage/Default.aspx?nodeid=619c77cd-b4d0-4788-9c64-d9897fd45751">HR Help</a></li>
+                            <li><a href="http://secure.intel.com/">Secure Intel</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="http://it.intel.com/#/tacphonenumbers">TAC Phone Numbers</a></li>
+                            <li><a href="http://it.intel.com/#/findservicecenter">Find IT Service Centers</a></li>
+                            <li><a href="http://it.intel.com/#/topic/749">IT Portal Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <span class="pull-right">© Intel Corporation | <a href="http://legal.intel.com/index.htm">Legal</a> | <a href="https://employeecontent.intel.com/content/corp/Global_Employee_and_Global_Contingent_Worker_Privacy.html">Employee/Contingent Worker Privacy</a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+﻿@*/**********************************************************************************************************************
+    * Project: Lync Diagnostic Tool                                               Intel® Copyright                       *
+    *                                                                           Created by: Marchena, Daniela            *
+    *                                                                           daniela.marchena.valladares@intel.com    *
+    *                                                                                                                    *
+    *                                                                                                                    *
+    *                                                                            Last Change: 01/13/2016                 *
+    * Description: partial view to display lync model results                                                            *
+    **********************************************************************************************************************/*@
+
+@model LyncDiagnosticToolv1.Models.LyncModel
+
+
+<div class="lyncInfo" id="lyncInfo">
+    <table>
+        <tr>
+            <th>
+                <h1>SfB Information</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.displayName):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.displayName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.WWID):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.WWID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.lyncEnabled):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.lyncEnabled)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.addressSIP):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.addressSIP)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.registrarPool):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.registrarPool)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.homeServer):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.homeServer)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.clientPolicy):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.clientPolicy)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.conferencePolicy):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.conferencePolicy)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.externalAccess):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.externalAccess)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.enterpriseVoice):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.enterpriseVoice)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.lineURI):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.lineURI)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.dialPlan):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.dialPlan)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.voiceePolicy):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.voiceePolicy)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.mailboxServer):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.mailboxServer)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.policyUM):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.policyUM)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.mobilityPolicy):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.mobilityPolicy)
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="CiscoInfo" id="CiscoInfo">
+    <table>
+        <tr>
+            <th>
+                <h1>Cisco Information</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.numberSearched):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.numberSearched)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.routePartition):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.routePartition)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.callForward):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.callForward)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.callForwardCSS):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.callForwardCSS)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.associatedDevices):
+            </td>
+            <td>
+              @Html.Raw(Model.associatedDevices)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.remoteDestination):
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.remoteDestination)
+            </td>
+        </tr>
+    </table>
+</div>
+
